@@ -1,0 +1,5 @@
+/out/
+/bin/
+*.h5
+/*.mp4
+run.sh
