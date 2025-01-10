@@ -128,7 +128,7 @@ maxwell::init__point_charge_sinusoidal(const scalar_t t,
   const size_t Ny = E.size(1);
 
   auto delta = [&](const scalar_t x, const scalar_t y) -> scalar_t {
-    const scalar_t tol = 1e-1;
+    const scalar_t tol = 2*h[0];
     return (std::abs(x) < tol) && (std::abs(y) < tol) ? 1.0 : 0.0;
   };
 
