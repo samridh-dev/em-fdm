@@ -2,15 +2,15 @@
 #include <maxwell.hpp>
 
 constexpr scalar_t tmax = 1e+0;
-constexpr scalar_t dt   = 1e-3;
+constexpr scalar_t dt   = 1e-2;
 
-constexpr scalar_t xmin = -1e+0;
-constexpr scalar_t ymin = -1e+0;
+constexpr scalar_t xmin = -2e+0;
+constexpr scalar_t ymin = -2e+0;
 constexpr scalar_t xmax =  1e+0;
 constexpr scalar_t ymax =  1e+0;
 
-constexpr scalar_t dx = 2e-3;
-constexpr scalar_t dy = 2e-3;
+constexpr scalar_t dx = 2e-2;
+constexpr scalar_t dy = 2e-2;
 
 constexpr scalar_t mu  = 1.0;
 constexpr scalar_t eps = 1.0;
@@ -33,9 +33,12 @@ main(void) {
     std::cout << "\rGenerating data : "
               << " timesteps : " << t << " / " << tmax
               << std::flush;
-
+  
+    #if 0
     m.init__point_charge_dipole(t);
-
+    #else
+    m.init__point_charge_sinusoidal(t);
+    #endif
     m.solve(dt);
 
     m.setbounds__PML(dt);
