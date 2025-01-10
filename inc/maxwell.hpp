@@ -55,7 +55,7 @@ class maxwell {
     init__point_charge_sinusoidal(const scalar_t t, 
                                   const scalar_t q = 1e2,
                                   const scalar_t r = 2e-1,
-                                  const scalar_t omega = 2e1);
+                                  const scalar_t omega = 1e1);
     void
     init__point_charge_dipole(const scalar_t t, 
                               const scalar_t q = 1e4,
